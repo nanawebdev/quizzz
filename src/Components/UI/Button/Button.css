@@ -1,0 +1,36 @@
+.Button {
+    cursor: pointer;
+    padding: 10px;
+    color: #ffffff;
+    border: 2px solid #ffffff;
+    background-color: transparent;
+    border-radius: 10px;
+    margin: 0 auto;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.Button + .Button {
+    margin-left: 10px;
+}
+
+.button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.button:active {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.primary {
+    background-color: #00aebb;
+}
+
+.success {
+    background-color: rgb(3, 211, 83);
+}
