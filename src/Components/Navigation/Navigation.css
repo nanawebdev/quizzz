@@ -1,0 +1,18 @@
+.NavigationToggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #ffffff;
+    transition: opacity, transform .22s;
+    z-index: 100;
+}
+
+.NavigationToggle:hover {
+    opacity: 0.7;
+}
+
+.NavigationToggle.open {
+    left: 320px;
+}

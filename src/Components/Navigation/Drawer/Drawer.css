@@ -1,0 +1,34 @@
+.Drawer {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 80%;
+    max-width: 300px;
+    padding: 20px 10px;
+    box-sizing: border-box;
+    background-color: #fff;
+    z-index: 90;
+    transform: translateX(0);
+    transition: transform .22s;
+}
+
+.Drawer.close {
+    transform: translateX(-300px);
+}
+
+.Drawer ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.Drawer li {
+    margin-bottom: 15px;
+}
+
+.Drawer a {
+    font-size: 30px;
+    text-decoration: none;
+    padding: 8px;
+}

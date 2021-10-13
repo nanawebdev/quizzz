@@ -5,5 +5,11 @@
     border: 2px solid #ffffff;
     padding: 25px 20px;
     width: 500px;
+    box-sizing: border-box;
 }
 
+@media (max-width: 768px) {
+    .AnswersList {
+        width: 100%;
+    }
+}
