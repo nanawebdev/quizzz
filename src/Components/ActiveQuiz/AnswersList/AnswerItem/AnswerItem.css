@@ -22,3 +22,9 @@
 .AnswerItem.error {
     background-color: rgba(240, 87, 108, 0.3);
 }
+
+@media (max-width: 768px) {
+    .AnswerItem:hover {
+        background-color: transparent;
+    }
+}
