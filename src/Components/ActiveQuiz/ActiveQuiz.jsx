@@ -10,15 +10,16 @@ const ActiveQuiz = props => {
                     <strong>{props.answerNumber}</strong>.
                     <span> {props.question}</span>
                 </p>
-
-                <span className={c.ActiveQuiz__counter}>{props.answerNumber} из {props.quizLength}</span>
             </div>
 
             <AnswersList
+                key={props.answerNumber}
                 onAnswerClick={props.onAnswerClick}
                 answers={props.answers}
                 answerState={props.answerState}
             />
+
+            <span className={c.ActiveQuiz__counter}>{props.answerNumber} из {props.quizLength}</span>
         </div>
     )
 }

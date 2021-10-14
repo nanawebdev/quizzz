@@ -1,6 +1,5 @@
 .ActiveQuiz__data {
     display: flex;
-    padding: 8px 16px;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -8,6 +7,24 @@
 
 .ActiveQuiz__data p {
     margin: 0;
+    padding-right: 10px;
+    flex-grow: 1;
+    padding-bottom: 10px;
+}
+
+.ActiveQuiz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 500px;
+    word-wrap: normal;
+}
+
+.ActiveQuiz__counter {
+    padding: 8px 16px;
+    border: 1px solid #ffffff;
+    border-radius: 10px;
+    margin-left: auto;
 }
 
 @media (max-width: 768px) {
