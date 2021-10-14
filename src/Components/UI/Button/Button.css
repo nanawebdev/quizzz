@@ -34,3 +34,11 @@
 .success {
     background-color: rgb(3, 211, 83);
 }
+
+@media (max-width: 768px) {
+    .Button + .Button {
+        margin-left: 0;
+        margin-right: 10px;
+        margin-top: 10px;
+    }
+}

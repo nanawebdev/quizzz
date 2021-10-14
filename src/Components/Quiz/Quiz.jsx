@@ -6,13 +6,13 @@ import c from './Quiz.css'
 class Quiz extends Component {
     state = {
         results: {},
-        isFinished: false,
+        isFinished: true,
         activeQuestion: 0,
         answerState: null,
         quiz: [
             {
                 id: 1,
-                question: 'Какого газа в атмосфере Земли больше всего?Какого газа в атмосфере Земли больше всего?Какого газа в атмосфере Земли больше всего?Какого газа в атмосфере Земли больше всего?',
+                question: 'Какого газа в атмосфере Земли больше всего?',
                 rightAnswerId: 3,
                 answers: [
                     { text: 'Кислород', id: 1 },
