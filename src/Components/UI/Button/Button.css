@@ -2,29 +2,12 @@
     cursor: pointer;
     padding: 10px;
     color: #ffffff;
-    border: 2px solid #ffffff;
+    border: none;
     background-color: transparent;
     border-radius: 10px;
     margin: 0 auto;
     text-transform: uppercase;
     font-weight: bold;
-}
-
-.Button + .Button {
-    margin-left: 10px;
-}
-
-.button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-}
-
-.button:active {
-    background-color: rgba(255, 255, 255, 0.7);
-}
-
-.button:disabled {
-    background-color: #cccccc;
-    cursor: not-allowed;
 }
 
 .primary {
@@ -35,10 +18,15 @@
     background-color: rgb(3, 211, 83);
 }
 
-@media (max-width: 768px) {
-    .Button + .Button {
-        margin-left: 0;
-        margin-right: 10px;
-        margin-top: 10px;
-    }
+.Button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.Button:active {
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.Button:disabled {
+    background-color: #7e7e7e;
+    cursor: not-allowed;
 }

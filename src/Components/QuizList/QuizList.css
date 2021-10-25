@@ -1,0 +1,36 @@
+.QuizList {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+    color: #ffffff;
+}
+
+.list {
+    list-style: none;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+}
+
+.list li {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid #ffffff;
+    box-sizing: border-box;
+}
+
+.list li + li {
+    margin-top: 20px;
+}
+
+.list a {
+    padding: 10px;
+    color: #ffffff;
+    width: 100%;
+    text-decoration: none;
+}

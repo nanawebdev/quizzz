@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ActiveQuiz from '../ActiveQuiz/ActiveQuiz'
 import FinishedQuiz from '../FinishedQuiz/FinishedQuiz'
 import c from './Quiz.css'
+import axios from './../../axios/axios-quiz'
+import Loader from '../UI/Loader/Loader'
 
 class Quiz extends Component {
     state = {
@@ -10,111 +12,112 @@ class Quiz extends Component {
         activeQuestion: 0,
         answerState: null,
         quiz: [
-            {
-                id: 1,
-                question: 'Какого газа в атмосфере Земли больше всего?',
-                rightAnswerId: 3,
-                answers: [
-                    { text: 'Кислород', id: 1 },
-                    { text: 'Углекислый газ', id: 2 },
-                    { text: 'Азот', id: 3 },
-                    { text: 'Водород', id: 4 }
-                ]
-            },
-            {
-                id: 2,
-                question: 'Какой римской цифры не существует?',
-                rightAnswerId: 2,
-                answers: [
-                    { text: '1 000', id: 1 },
-                    { text: '0', id: 2 },
-                    { text: '10 000', id: 3 },
-                    { text: '100 000', id: 4 }
-                ]
-            },
-            {
-                id: 3,
-                question: 'Чего боятся люди, которые страдают алекторофобией?',
-                rightAnswerId: 2,
-                answers: [
-                    { text: 'Собак', id: 1 },
-                    { text: 'Кур', id: 2 },
-                    { text: 'Бороды', id: 3 },
-                    { text: 'Чеснок', id: 4 }
-                ]
-            },
-            {
-                id: 4,
-                question: 'В какой стране более одной столицы?',
-                rightAnswerId: 1,
-                answers: [
-                    { text: 'ЮАР', id: 1 },
-                    { text: 'Алжир', id: 2 },
-                    { text: 'Тунис', id: 3 }
-                ]
-            },
-            {
-                id: 5,
-                question: 'Мозг используется только на 10%. Правда или ложь?',
-                rightAnswerId: 2,
-                answers: [
-                    { text: 'Правда', id: 1 },
-                    { text: 'Ложь', id: 2 }
-                ]
-            },
-            {
-                id: 6,
-                question: 'Планета Венера названа в честь имени человека. Правда или ложь?',
-                rightAnswerId: 2,
-                answers: [
-                    { text: 'Правда', id: 1 },
-                    { text: 'Ложь', id: 2 }
-                ]
-            },
-            {
-                id: 7,
-                question: 'Назовите столицу Европейского Союза?',
-                rightAnswerId: 4,
-                answers: [
-                    { text: 'Вена', id: 1 },
-                    { text: 'Кельн', id: 2 },
-                    { text: 'Париж', id: 3 },
-                    { text: 'Брюссель', id: 4 }
-                ]
-            },
-            {
-                id: 8,
-                question: 'Почему летом жарче, чем зимой?',
-                rightAnswerId: 1,
-                answers: [
-                    { text: 'Из-за наклона земной оси', id: 1 },
-                    { text: 'Потому что Земля ближе к Солнцу летом', id: 2 },
-                    { text: 'Потому что Земля имеет эллиптическую орбиту', id: 3 },
-                    { text: 'Летом активность Солцна больше', id: 4 }
-                ]
-            },
-            {
-                id: 9,
-                question: 'Зачем Христофор Колумб в 1492 году отправился в плавание?',
-                rightAnswerId: 2,
-                answers: [
-                    { text: 'Он хотел доказать, что Земля круглая', id: 1 },
-                    { text: 'Он искал западный путь в Азию', id: 2 },
-                    { text: 'Он искал Америку', id: 3 }
-                ]
-            },
-            {
-                id: 10,
-                question: 'Кто автор Робинзона Крузо?',
-                rightAnswerId: 3,
-                answers: [
-                    { text: 'Джек Лондон', id: 1 },
-                    { text: 'Жюль Верн', id: 2 },
-                    { text: 'Даниэль Дефо', id: 3 },
-                    { text: 'Александр Дюма', id: 4 }
-                ]
-            },
-        ]
+            // {
+            //     id: 1,
+            //     question: 'Какого газа в атмосфере Земли больше всего?',
+            //     rightAnswerId: 3,
+            //     answers: [
+            //         { text: 'Кислород', id: 1 },
+            //         { text: 'Углекислый газ', id: 2 },
+            //         { text: 'Азот', id: 3 },
+            //         { text: 'Водород', id: 4 }
+            //     ]
+            // },
+            // {
+            //     id: 2,
+            //     question: 'Какой римской цифры не существует?',
+            //     rightAnswerId: 2,
+            //     answers: [
+            //         { text: '1 000', id: 1 },
+            //         { text: '0', id: 2 },
+            //         { text: '10 000', id: 3 },
+            //         { text: '100 000', id: 4 }
+            //     ]
+            // },
+            // {
+            //     id: 3,
+            //     question: 'Чего боятся люди, которые страдают алекторофобией?',
+            //     rightAnswerId: 2,
+            //     answers: [
+            //         { text: 'Собак', id: 1 },
+            //         { text: 'Кур', id: 2 },
+            //         { text: 'Бороды', id: 3 },
+            //         { text: 'Чеснок', id: 4 }
+            //     ]
+            // },
+            // {
+            //     id: 4,
+            //     question: 'В какой стране более одной столицы?',
+            //     rightAnswerId: 1,
+            //     answers: [
+            //         { text: 'ЮАР', id: 1 },
+            //         { text: 'Алжир', id: 2 },
+            //         { text: 'Тунис', id: 3 }
+            //     ]
+            // },
+            // {
+            //     id: 5,
+            //     question: 'Мозг используется только на 10%. Правда или ложь?',
+            //     rightAnswerId: 2,
+            //     answers: [
+            //         { text: 'Правда', id: 1 },
+            //         { text: 'Ложь', id: 2 }
+            //     ]
+            // },
+            // {
+            //     id: 6,
+            //     question: 'Планета Венера названа в честь имени человека. Правда или ложь?',
+            //     rightAnswerId: 2,
+            //     answers: [
+            //         { text: 'Правда', id: 1 },
+            //         { text: 'Ложь', id: 2 }
+            //     ]
+            // },
+            // {
+            //     id: 7,
+            //     question: 'Назовите столицу Европейского Союза?',
+            //     rightAnswerId: 4,
+            //     answers: [
+            //         { text: 'Вена', id: 1 },
+            //         { text: 'Кельн', id: 2 },
+            //         { text: 'Париж', id: 3 },
+            //         { text: 'Брюссель', id: 4 }
+            //     ]
+            // },
+            // {
+            //     id: 8,
+            //     question: 'Почему летом жарче, чем зимой?',
+            //     rightAnswerId: 1,
+            //     answers: [
+            //         { text: 'Из-за наклона земной оси', id: 1 },
+            //         { text: 'Потому что Земля ближе к Солнцу летом', id: 2 },
+            //         { text: 'Потому что Земля имеет эллиптическую орбиту', id: 3 },
+            //         { text: 'Летом активность Солцна больше', id: 4 }
+            //     ]
+            // },
+            // {
+            //     id: 9,
+            //     question: 'Зачем Христофор Колумб в 1492 году отправился в плавание?',
+            //     rightAnswerId: 2,
+            //     answers: [
+            //         { text: 'Он хотел доказать, что Земля круглая', id: 1 },
+            //         { text: 'Он искал западный путь в Азию', id: 2 },
+            //         { text: 'Он искал Америку', id: 3 }
+            //     ]
+            // },
+            // {
+            //     id: 10,
+            //     question: 'Кто автор Робинзона Крузо?',
+            //     rightAnswerId: 3,
+            //     answers: [
+            //         { text: 'Джек Лондон', id: 1 },
+            //         { text: 'Жюль Верн', id: 2 },
+            //         { text: 'Даниэль Дефо', id: 3 },
+            //         { text: 'Александр Дюма', id: 4 }
+            //     ]
+            // },
+        ],
+        loading: true
     }
 
 
@@ -168,13 +171,27 @@ class Quiz extends Component {
         return this.state.activeQuestion + 1 === this.state.quiz.length
     }
 
-    onRetryHandler =() => {
+    onRetryHandler = () => {
         this.setState({
             activeQuestion: 0,
             answerState: null,
             isFinished: false,
             results: []
         })
+    }
+
+    async componentDidMount() {
+        try {
+            const response = await axios.get(`/quizes.json`)
+            const quiz = response.data
+
+            this.setState({
+                quiz: quiz[this.props.match.params.id],
+                loading: false
+            })
+        } catch (e) {
+            console.log(e)
+        }
     }
 
     render() {
@@ -187,7 +204,10 @@ class Quiz extends Component {
                 }
 
                 {
-                    this.state.isFinished
+                    this.state.loading
+                        ? <Loader />
+
+                    : this.state.isFinished
                         ? <FinishedQuiz
                             onRetry={this.onRetryHandler}
                             results={this.state.results}
