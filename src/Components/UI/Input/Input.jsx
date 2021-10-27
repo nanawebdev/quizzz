@@ -22,6 +22,7 @@ const Input = props => {
                 id={htmlFor}
                 onChange={props.onChange}
                 required={props.required}
+                value={props.value}
             />
             {
                 isInvalid(props)

@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { connect } from 'react-redux'
 import Drawer from '../../Components/Navigation/Drawer/Drawer'
 import Navigation from '../../Components/Navigation/Navigation'
 import c from './Layout.css'
@@ -27,6 +28,7 @@ class Layout extends Component {
         <Drawer
           isOpen={this.state.menu}
           onClose={this.menuCloseHandler}
+          isAuthenticated={this.props.isAuthenticated}
         />
         
         <Navigation
@@ -41,4 +43,10 @@ class Layout extends Component {
   }
 }
 
-export default Layout
+function mapStateToProps(state) {
+  return {
+    isAuthenticated: !!state.auth.token
+  }
+}
+
+export default connect(mapStateToProps)(Layout)

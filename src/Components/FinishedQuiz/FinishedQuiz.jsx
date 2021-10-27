@@ -16,7 +16,7 @@ const FinishedQuiz = props => {
             <h1>Вы ответили на все вопросы!</h1>
             <ul>
                 {props.quiz.map((quizItem, i) => {
-                    console.log(props.results)
+        
                      const cls = [
                         'fa',
                         props.results[quizItem.id] === 'error' ? 'fa-times' : 'fa-check',
