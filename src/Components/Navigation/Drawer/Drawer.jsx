@@ -26,7 +26,7 @@ class Drawer extends Component {
         })
     }
     render() {
-        console.log(this.props)
+        
         const cls = [c.Drawer]
 
         if (!this.props.isOpen) {

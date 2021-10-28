@@ -4,6 +4,7 @@ import c from './QuizList.css'
 import Loader from '../UI/Loader/Loader'
 import { connect } from 'react-redux'
 import { fetchQuizes } from '../../store/actions/quiz'
+import UiTitle from '../UI/UiTitle/UiTitle'
 
 class QuizList extends React.Component {
     renderQuizes() {
@@ -13,6 +14,7 @@ class QuizList extends React.Component {
                     <NavLink to={'/quiz/' + q.id}>
                         {q.name}
                     </NavLink>
+                    <button>Пройти</button>
                 </li>
             )
         })
@@ -23,9 +25,10 @@ class QuizList extends React.Component {
     }
 
     render() {
+        // console.log(this.props)
         return (
             <div className={c.QuizList}>
-                <h1>Все тесты</h1>
+                {/* <h1>Все тесты</h1> */}
 
                 { this.props.loading && this.props.quizes.length !== 0
                     ? <Loader />

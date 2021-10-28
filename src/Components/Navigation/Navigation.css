@@ -1,10 +1,10 @@
 .NavigationToggle {
     position: fixed;
-    top: 20px;
+    top: 35px;
     left: 20px;
-    font-size: 20px;
+    font-size: 35px;
     cursor: pointer;
-    color: #ffffff;
+    color: #000;
     transition: opacity, transform .22s;
     z-index: 100;
 }
@@ -15,4 +15,5 @@
 
 .NavigationToggle.open {
     left: 320px;
+    color: #fff;
 }

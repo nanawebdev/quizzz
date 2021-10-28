@@ -20,7 +20,7 @@ class App extends Component {
       <Switch>
         <Route path='/auth' component={Auth} />
         <Route path='/quiz/:id' component={Quiz} />
-        <Route path='/' component={QuizList} exact />
+        <Route path='/' component={QuizList} exact title='Все тесты' />
         <Redirect to='/' />
       </Switch>
     )

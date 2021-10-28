@@ -1,16 +1,17 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import Drawer from '../../Components/Navigation/Drawer/Drawer'
 import Navigation from '../../Components/Navigation/Navigation'
+import UiTitle from '../../Components/UI/UiTitle/UiTitle'
 import c from './Layout.css'
 
 class Layout extends Component {
- 
-    state = {
-      menu: false
-    }
 
-  toggleMenuHandler= () => {
+  state = {
+    menu: false
+  }
+
+  toggleMenuHandler = () => {
     this.setState({
       menu: !this.state.menu
     })
@@ -21,6 +22,7 @@ class Layout extends Component {
       menu: false
     })
   }
+
   render() {
     return (
       <div className={c.Layout}>
@@ -30,13 +32,18 @@ class Layout extends Component {
           onClose={this.menuCloseHandler}
           isAuthenticated={this.props.isAuthenticated}
         />
-        
+
         <Navigation
-         onToggle={this.toggleMenuHandler}
-         isOpen={this.state.menu}
+          onToggle={this.toggleMenuHandler}
+          isOpen={this.state.menu}
         />
+
+        <UiTitle>
+          {this.props.title}
+        </UiTitle>
+
         <main>
-          { this.props.children }
+          {this.props.children}
         </main>
       </div>
     )

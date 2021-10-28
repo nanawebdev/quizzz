@@ -3,34 +3,67 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(90deg, #efd5ff 0%, #515ada 100%);
+   
     color: #ffffff;
 }
 
 .list {
     list-style: none;
-    width: 500px;
     display: flex;
-    flex-direction: column;
-    margin: 0;
-    padding: 0;
+    flex-wrap: wrap;
+    margin: 0 auto;
 }
 
 .list li {
-    width: 100%;
+    height: 200px;
+    width: 200px;
     display: flex;
-    flex-wrap: wrap;
-    border: 1px solid #ffffff;
+    flex-direction: column;    
+    border: 5px solid #fff;
+    border-top: 25px solid #fff;
+    box-shadow: 0 0 0 2px #000;
+    border-radius: 10px;
     box-sizing: border-box;
-}
+    background-color: #94aff5;
+    cursor: pointer;
+    margin: 10px;
+    text-align: center;
+    padding-bottom: 10px;
+    align-items: center;
 
-.list li + li {
-    margin-top: 20px;
 }
 
 .list a {
-    padding: 10px;
-    color: #ffffff;
+    color: #000;
     width: 100%;
+    height: 100%;
     text-decoration: none;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    flex-grow: 1;
+}
+
+.QuizList button {
+    background: repeating-linear-gradient(45deg,#9fb9e6,#9fb9e6 2px, #f5afd1 10px);
+    border: 2px solid #000;
+    border-radius: 5px;
+    width: 80%;
+    padding: 5px;
+    height: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.QuizList button:hover {
+    animation: button 2s infinite alternate;
+}
+
+
+@keyframes button {
+    100% {
+        background-position: 100px 0px;
+    }
 }

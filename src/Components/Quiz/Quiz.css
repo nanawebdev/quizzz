@@ -1,7 +1,7 @@
 .Quiz {
     padding-top: 100px;
     flex-grow: 1;
-    background: linear-gradient(0deg, rgba(120,212,215,1) 10%, rgba(89,188,195,1) 29%, rgba(112,111,175,1) 60%);
+    background: linear-gradient(180deg, rgba(245,175,209,1) 21%, rgba(200,182,220,1) 51%, rgba(159,185,230,1) 100%);
     color: #ffffff;
     display: flex;
     flex-direction: column;

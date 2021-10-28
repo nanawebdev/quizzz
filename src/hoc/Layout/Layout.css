@@ -1,7 +1,12 @@
 .Layout {
-    height: 100vh;
+    height: 100%;
     display: flex;
     flex-direction: column;
+    background: 
+        linear-gradient( #fff, transparent 1px), linear-gradient( 90deg, #fff, transparent 1px),
+        linear-gradient(180deg, rgba(245,175,209,1) 21%, rgba(200,182,220,1) 51%, rgba(159,185,230,1) 100%);
+    background-size: 35px 35px, 35px 35px, 100% 100%;
+    background-position: center center;
 }
 
 .Layout main {
