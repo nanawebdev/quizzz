@@ -1,7 +1,7 @@
 .Button {
     cursor: pointer;
     padding: 10px;
-    color: #ffffff;
+    color: #fff;
     border: none;
     background-color: transparent;
     border-radius: 10px;
@@ -11,15 +11,19 @@
 }
 
 .primary {
-    background-color: #00aebb;
+    background-color: #798ee0;
 }
 
 .success {
-    background-color: rgb(3, 211, 83);
+    background-color: #5cb687;
 }
 
-.Button:hover {
-    background-color: rgba(255, 255, 255, 0.3);
+.Button.success:hover {
+    background-color: #9fdfbe;
+}
+
+.Button.primary:hover {
+    background-color: #94aff5;
 }
 
 .Button:active {
@@ -27,6 +31,10 @@
 }
 
 .Button:disabled {
-    background-color: #7e7e7e;
+    background-color: #b3b3b3;
     cursor: not-allowed;
+}
+
+.Button:disabled:hover {
+    background-color: #b3b3b3;
 }

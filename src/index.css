@@ -6,6 +6,11 @@ body {
 
 body,
 html,
-body > div  {
+body > div {
+  height: 100%;
+}
+
+
+main {
   height: 100%;
 }

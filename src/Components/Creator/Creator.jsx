@@ -8,16 +8,12 @@ import { connect } from 'react-redux'
 import { createQuizQuestion, finishCreateQuiz } from './../../store/actions/create'
 
 
-function createOptionControl(isRequired, number) {
+function createOptionControl(isRequired, number, value) {
     return createControl({
         label: `Введите ответ ${number}`,
         errorMessage: 'Поле не может быть пустым',
         id: number
-    },
-        {
-            required: isRequired
-        }
-    )
+    }, { required: isRequired }, value)
 }
 
 function createFormControls() {
@@ -25,22 +21,23 @@ function createFormControls() {
         question: createControl({
             label: 'Введите вопрос',
             errorMessage: 'Поле не может быть пустым'
-        }, { required: true }),
+        }, { required: true }, ''),
 
-        option1: createOptionControl(true, 1),
-        option2: createOptionControl(true, 2),
-        option3: createOptionControl(false, 3),
-        option4: createOptionControl(false, 4),
+        option1: createOptionControl(true, 1, ''),
+        option2: createOptionControl(true, 2, ''),
+        option3: createOptionControl(false, 3, ''),
+        option4: createOptionControl(false, 4, ''),
     }
 }
 
+const DEFAULT_CONTROLS = createFormControls()
 
 class Creator extends React.Component {
 
     state = {
-        formControls: createFormControls(),
+        formControls: DEFAULT_CONTROLS,
         rightAnswerId: 1,
-        isFormValid: false
+        isFormValid: validateForm(DEFAULT_CONTROLS)
     }
 
     onSubmitHandler = e => {
@@ -67,21 +64,21 @@ class Creator extends React.Component {
 
         this.props.createQuizQuestion(questionItem)
 
-        this.setState({ 
-            formControls: createFormControls(),
+        this.setState({
+            formControls: DEFAULT_CONTROLS,
             rightAnswerId: 1,
-            isFormValid: false
+            isFormValid: validateForm(DEFAULT_CONTROLS)
         })
 
     }
 
     createQuizHandler = (event) => {
         event.preventDefault()
-       
+
         this.setState({
-            formControls: createFormControls(),
+            formControls: DEFAULT_CONTROLS,
             rightAnswerId: 1,
-            isFormValid: false
+            isFormValid: validateForm(DEFAULT_CONTROLS)
         })
 
         this.props.finishCreateQuiz()

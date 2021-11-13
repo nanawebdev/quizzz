@@ -10,7 +10,7 @@ const Input = props => {
     const cls = [c.Input]
     const htmlFor = `${inputType}-${Math.random()}`
 
-    if(isInvalid(props)) {
+    if (isInvalid(props)) {
         cls.push(c.invalid)
     }
 

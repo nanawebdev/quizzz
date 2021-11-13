@@ -1,11 +1,11 @@
 import React from 'react'
-import c from './Select.module.scss'
+// import c from './Select.css'
 
 const Select = props => {
     const htmlFor = `${props.label}-${Math.random()}`
 
     return (
-        <div className={c.Select }>
+        <div>
             <label htmlFor={htmlFor}></label>
             <select
                 id={htmlFor}
